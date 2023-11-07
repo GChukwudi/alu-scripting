@@ -20,8 +20,3 @@ def number_of_subscribers(subreddit):
         # Handle the case where the subreddit is invalid or another error occurred
         print(f"Error: Could not retrieve data for subreddit '{subreddit}'. Status code: {raw_response.status_code}")
         return None
-
-# subreddit = "programming"
-# sub_count = number_of_subscribers(subreddit)
-# if sub_count is not None:
-#     print(f"The subreddit r/{subreddit} has {sub_count} subscribers.")
