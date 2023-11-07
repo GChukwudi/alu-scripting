@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""
-ontains the number_of_subscribers function
-"""
-
+""""Doc"""
 import requests
 
 
