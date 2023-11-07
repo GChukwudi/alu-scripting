@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-import requests
+
 """
 ontains the number_of_subscribers function
 """
+import requests
 
 def number_of_subscribers(subreddit):
     subreddit = "programming"
