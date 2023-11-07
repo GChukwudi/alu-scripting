@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""""Doc"""
+""""
+Doc
+"""
 
 
 import requests
