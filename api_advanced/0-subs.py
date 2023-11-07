@@ -1,12 +1,14 @@
 #!/usr/bin/python3
 """"Doc"""
+
+
 import requests
 
 
 def number_of_subscribers(subreddit):
     subreddit = "programming"
     headers = {
-        "User_Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36"
+        "User_Agent": "Mozilla/5.0"
     }
     URL = f"https://www.reddit.com/r/{subreddit}/about.json"
 
