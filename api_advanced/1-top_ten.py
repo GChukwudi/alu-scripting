@@ -11,11 +11,11 @@ def top_ten(subreddit):
         }
 
     response = requests.get(URL, headers=my_headers)
-    raw_response = response.json()['data']['children']
+    # raw_response = response.json()['data']['children']
 
-    if raw_response.status_code == 200:
-        json_response = raw_response.json()
-        post = json_response['data']['subscribers']
+    if response.status_code == 200:
+        json_response = response.json()
+        post = json_response['data']['children']
         return post
 
     else:
