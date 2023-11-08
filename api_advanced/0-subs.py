@@ -1,16 +1,11 @@
 #!/usr/bin/python3
-""""
-returns the number of subscribers (not active users,
-total subscribers)for a givensubreddit. If an 
-invalid subreddit is given, the function should return 0
-"""
+""""Doc"""
 import requests
 
 
 def number_of_subscribers(subreddit):
-    """Returns the number of subscribers for a given subreddit."""
-    # subreddit = "programming"
-    URL = f"https://www.reddit.com/r/{subreddit}/about.json"
+    """"Doc"""
+    URL = "https://www.reddit.com/r/{}/about.json".format(subreddit)
     
     my_headers = {
         "User-Agent": "myApp 0.1 (by /u/favour_DC)"
