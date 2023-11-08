@@ -6,17 +6,17 @@ import requests
 def number_of_subscribers(subreddit):
     """"Doc"""
     URL = "https://www.reddit.com/r/{}/about.json".format(subreddit)
-    
+
     my_headers = {
         "User-Agent": "myApp 0.1 (by /u/favour_DC)"
         }
-    
+
     raw_response = requests.get(URL, headers=my_headers, allow_redirects=False)
-        
+
     if raw_response.status_code == 200:
         json_response = raw_response.json()
         sub_count = json_response['data']['subscribers']
         return sub_count
-                
-    else: 
+
+    else:
         return 0
