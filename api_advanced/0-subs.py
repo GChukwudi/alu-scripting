@@ -1,26 +1,19 @@
 #!/usr/bin/python3
-""""
-Doc
-"""
-
-
+""""Doc"""
 import requests
 
 
 def number_of_subscribers(subreddit):
-    subreddit = "programming"
-    headers = {
-        "User_Agent": "Mozilla/5.0"
-    }
-    URL = f"https://www.reddit.com/r/{subreddit}/about.json"
+    """"Doc"""
+    url = "https://www.reddit.com/r/{}/about.json" \
+        .format(subreddit)
 
-    raw_response = requests.get(URL, headers=headers)
+    res = requests.get(url,
+                       headers={
+                           'User-Agent': 'Mozilla/5.0'})
 
-    if raw_response.status_code == 200:
-        json_response = raw_response.json()
-        sub_count = json_response['data']['subscribers']
-        return sub_count
+    if res.status_code != 200:
+        return 0
     else:
-        # Handle the case where the subreddit is invalid or another error occurred
-        print(f"Error: Could not retrieve data for subreddit '{subreddit}'. Status code: {raw_response.status_code}")
-        return None
+        json_response = res.json()
+        return json_response.get('data').get('subscribers')
