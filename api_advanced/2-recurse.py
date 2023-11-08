@@ -10,7 +10,7 @@ def recurse(subreddit, hot_list=[], after=None):
         "User-Agent": "myApp 0.1 (by /u/favour_DC)"
         }
     params = {'after': after}
-    response = requests.get (URL, headers=my_headers,
+    response = requests.get(URL, headers=my_headers,
                              params=params, allow_redirects=False)
     if response.status_code == 200:
         data = response.json()['data']
