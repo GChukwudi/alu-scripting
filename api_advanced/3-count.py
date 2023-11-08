@@ -22,7 +22,7 @@ def count_words(subreddit, word_list, after="", words_count={}):
         }
     params = {'after': after}
     response = requests.get(URL, headers=my_headers, params=params)
-    
+
     if response.status_code != 200:
         return None
 
