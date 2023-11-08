@@ -1,15 +1,19 @@
 #!/usr/bin/python3
-""""Doc"""
+""""
+returns the number of subscribers (not active users,
+total subscribers)for a givensubreddit. If an 
+invalid subreddit is given, the function should return 0
+"""
 import requests
 
 
 def number_of_subscribers(subreddit):
     """Returns the number of subscribers for a given subreddit."""
-    subreddit = "programming"
+    # subreddit = "programming"
     URL = f"https://www.reddit.com/r/{subreddit}/about.json"
     
     my_headers = {
-        "User-Agent": "Chrome 0.2 (by /u/favour_DC)"
+        "User-Agent": "myApp 0.1 (by /u/favour_DC)"
         }
     
     raw_response = requests.get(URL, headers=my_headers, allow_redirects=False)
@@ -17,9 +21,7 @@ def number_of_subscribers(subreddit):
     if raw_response.status_code == 200:
         json_response = raw_response.json()
         sub_count = json_response['data']['subscribers']
-        print(sub_count)
+        return sub_count
                 
     else: 
-        print("Invalid Subreddit")
-
-number_of_subscribers('programming')
+        return 0
