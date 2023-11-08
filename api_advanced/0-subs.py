@@ -1,18 +1,24 @@
 #!/usr/bin/python3
-""""Doc"""
+""""Module"""
 import requests
 
 
 def number_of_subscribers(subreddit):
-    """"Doc"""
-    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
+        subreddit = "programming"
+        URL = f"https://www.reddit.com/r/{subreddit}/about.json"
 
-    res = requests.get(url,
-                       headers={
-                           'User-Agent': 'Mozilla/5.0'})
+        my_headers = {
+            "User-Agent": "Chrome 0.2 (by /u/favour_DC)"
+        }
 
-    if res.status_code != 200:
-        return 0
-    else:
-        json_response = res.json()
-        return json_response.get('data').get('subscribers')
+        raw_response = requests.get(URL, headers=my_headers, allow_redirects=False)
+        
+        if raw_response.status_code == 200:
+            json_response = raw_response.json()
+            sub_count = json_response['data']['subscribers']
+            print(sub_count)
+                
+        else: 
+            print("Invalid Subreddit")
+
+number_of_subscribers('programming')
